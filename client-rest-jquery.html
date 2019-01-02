@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="jquery-3.3.1.min.js""></script>
+</head>
+<body>
+    <h1>Liste des livres</h1>
+    <div id="livres"></div>
+
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                url: "http://localhost:8001/books",
+                dataType: 'text/json'
+            }).done(function (livres) {
+                console.log(livres);
+            });
+        });
+    </script>
+</body>
+</html>
