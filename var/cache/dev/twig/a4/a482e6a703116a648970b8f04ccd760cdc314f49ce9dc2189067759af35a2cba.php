@@ -162,6 +162,6 @@ class __TwigTemplate_9e19a57f5a4fe7d2b91dd71e4d2222016cac1b9a42d597b3d973afb16d7
         {% endif %}
     </div>
 {% endblock %}
-", "@WebProfiler/Profiler/open.html.twig", "/home/maysa/Documents/symfony-rest-server-master/vendor/symfony/symfony/src/Symfony/Bundle/WebProfilerBundle/Resources/views/Profiler/open.html.twig");
+", "@WebProfiler/Profiler/open.html.twig", "/home/fatma/Bureau/symfony-rest-server-master/vendor/symfony/symfony/src/Symfony/Bundle/WebProfilerBundle/Resources/views/Profiler/open.html.twig");
     }
 }

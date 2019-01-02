@@ -59,6 +59,6 @@ class __TwigTemplate_199fc4e4de3f7fc902db6cad5d12b19c9ee05b6cde28721ee629752e969
     public function getSourceContext()
     {
         return new Twig_Source("{{ include('@Twig/Exception/error.xml.twig') }}
-", "@Twig/Exception/error.atom.twig", "/home/maysa/Documents/symfony-rest-server-master/vendor/symfony/symfony/src/Symfony/Bundle/TwigBundle/Resources/views/Exception/error.atom.twig");
+", "@Twig/Exception/error.atom.twig", "/home/fatma/Bureau/symfony-rest-server-master/vendor/symfony/symfony/src/Symfony/Bundle/TwigBundle/Resources/views/Exception/error.atom.twig");
     }
 }

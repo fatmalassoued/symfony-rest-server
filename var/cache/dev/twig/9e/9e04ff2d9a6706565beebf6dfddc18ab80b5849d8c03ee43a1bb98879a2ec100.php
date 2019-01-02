@@ -65,6 +65,6 @@ class __TwigTemplate_173bb6767786cc93879d73b148ab6aac2498c5b99d2e033d00254b6c56b
         return new Twig_Source("/*
 {{ include('@Twig/Exception/exception.txt.twig', { exception: exception }) }}
 */
-", "@Twig/Exception/exception.css.twig", "/home/maysa/Documents/symfony-rest-server-master/vendor/symfony/symfony/src/Symfony/Bundle/TwigBundle/Resources/views/Exception/exception.css.twig");
+", "@Twig/Exception/exception.css.twig", "/home/fatma/Bureau/symfony-rest-server-master/vendor/symfony/symfony/src/Symfony/Bundle/TwigBundle/Resources/views/Exception/exception.css.twig");
     }
 }

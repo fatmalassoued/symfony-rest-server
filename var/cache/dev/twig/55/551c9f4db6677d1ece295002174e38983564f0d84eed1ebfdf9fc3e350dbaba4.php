@@ -386,6 +386,6 @@ class __TwigTemplate_eacd6bb94d51050f6c6e4a317f82b3cc57bda532e8c69e35712fd211f72
         {% endfor %}
     </table>
 {% endmacro %}
-", "@WebProfiler/Collector/events.html.twig", "/home/maysa/Documents/symfony-rest-server-master/vendor/symfony/symfony/src/Symfony/Bundle/WebProfilerBundle/Resources/views/Collector/events.html.twig");
+", "@WebProfiler/Collector/events.html.twig", "/home/fatma/Bureau/symfony-rest-server-master/vendor/symfony/symfony/src/Symfony/Bundle/WebProfilerBundle/Resources/views/Collector/events.html.twig");
     }
 }

@@ -254,6 +254,6 @@ class __TwigTemplate_a9f6890c3a27bfe18a403a0fb96af6621e7ecbbf48f299ef189d5eabcbc
     }
 </style>
 {% endblock %}
-", "default/index.html.twig", "/home/maysa/Documents/symfony-rest-server-master/app/Resources/views/default/index.html.twig");
+", "default/index.html.twig", "/home/fatma/Bureau/symfony-rest-server-master/app/Resources/views/default/index.html.twig");
     }
 }

@@ -12,37 +12,37 @@ use FOS\RestBundle\View\View;
 class AuteurController extends FOSRestController
 {
     /**
-     * @Rest\Get("/auteurs")
+     * @Rest\Get("/auteur")
      */
     public function getAction()
     {
         $result = $this->getDoctrine()->getRepository(Auteur::class)->findAll();
         if ($result === null) {
-            return new View('ilya pas des auteurs ', Response::HTTP_NOT_FOUND);
+            return new View(' pas de auteur ', Response::HTTP_NOT_FOUND);
         }
 
         return $result;
     }
 
     /**
-     * @Rest\Post("/auteurs")
+     * @Rest\Post("/auteur")
      */
     public function addAutheur(Request $request)
     {
         $Auteur = new Auteur();
-        $Auteur->setNom('karmeni mayssa POST');
-        $Auteur->setPrenom('karmeni POST');
+        $Auteur->setNom('lassoued POST');
+        $Auteur->setPrenom('fatma POST');
 
-        $Auteur->setEmail('mayssakarmeni@gmail.com');
+        $Auteur->setEmail('lasdoued@gmail.com');
         $em = $this->getDoctrine()->getManager();
         $em->persist($Auteur);
         $em->flush();
 
-        return new View('auteur ajouté avec succeé  ', Response::HTTP_CREATED);
+        return new View(' ajouter avec succeé  ', Response::HTTP_CREATED);
     }
 
     /**
-     * @Rest\Put("/auteurs/{id}")
+     * @Rest\Put("/auteur/{id}")
      */
     public function updateLivre(Request $request, $id)
     {
@@ -52,18 +52,18 @@ class AuteurController extends FOSRestController
         if ($Auteur == null) {
             return new View('NULL VALUES ARE NOT ALLOWED', Response::HTTP_NOT_CREATED);
         }
-        $Auteur->setNom('Put mayssa');
-        $Auteur->setPrenom('karmeni POST');
-        $Auteur->setEmail('mayssa@karmeni.com');
+        $Auteur->setNom('Put lassoued');
+        $Auteur->setPrenom('fatma POST');
+        $Auteur->setEmail('lasdoued@gmail.com');
         $em = $this->getDoctrine()->getManager();
         $em->persist($Auteur);
         $em->flush();
 
-        return new View('autheur update Successfully', Response::HTTP_CREATED);
+        return new View('auteur modifier ', Response::HTTP_CREATED);
     }
 
     /**
-     * @Rest\Get("/auteurs/{id}")
+     * @Rest\Get("/auteur/{id}")
      */
     public function detailAction($id)
     {
@@ -72,7 +72,7 @@ class AuteurController extends FOSRestController
         $result = $repo->find($id);
 
         if ($result === null) {
-            return new View('ilya pas des auteurs avec cette id', Response::HTTP_NOT_FOUND);
+            return new View('id invalide ' , Response::HTTP_NOT_FOUND);
         }
 
         return $result;

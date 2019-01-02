@@ -107,9 +107,9 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
         }
 
-        elseif (0 === strpos($pathinfo, '/auteurs')) {
+        elseif (0 === strpos($pathinfo, '/auteur')) {
             // app_auteur_get
-            if ('/auteurs' === $pathinfo) {
+            if ('/auteur' === $pathinfo) {
                 $ret = array (  '_controller' => 'AppBundle\\Controller\\AuteurController::getAction',  '_route' => 'app_auteur_get',);
                 if (!in_array($canonicalMethod, array('GET'))) {
                     $allow = array_merge($allow, array('GET'));
@@ -121,7 +121,7 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             not_app_auteur_get:
 
             // app_auteur_addautheur
-            if ('/auteurs' === $pathinfo) {
+            if ('/auteur' === $pathinfo) {
                 $ret = array (  '_controller' => 'AppBundle\\Controller\\AuteurController::addAutheur',  '_route' => 'app_auteur_addautheur',);
                 if (!in_array($requestMethod, array('POST'))) {
                     $allow = array_merge($allow, array('POST'));
@@ -133,7 +133,7 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             not_app_auteur_addautheur:
 
             // app_auteur_updatelivre
-            if (preg_match('#^/auteurs/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+            if (preg_match('#^/auteur/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
                 $ret = $this->mergeDefaults(array_replace($matches, array('_route' => 'app_auteur_updatelivre')), array (  '_controller' => 'AppBundle\\Controller\\AuteurController::updateLivre',));
                 if (!in_array($requestMethod, array('PUT'))) {
                     $allow = array_merge($allow, array('PUT'));
@@ -145,7 +145,7 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             not_app_auteur_updatelivre:
 
             // app_auteur_detail
-            if (preg_match('#^/auteurs/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+            if (preg_match('#^/auteur/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
                 $ret = $this->mergeDefaults(array_replace($matches, array('_route' => 'app_auteur_detail')), array (  '_controller' => 'AppBundle\\Controller\\AuteurController::detailAction',));
                 if (!in_array($canonicalMethod, array('GET'))) {
                     $allow = array_merge($allow, array('GET'));
@@ -173,60 +173,57 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
         }
         not_homepage:
 
-        if (0 === strpos($pathinfo, '/book')) {
-            if (0 === strpos($pathinfo, '/books')) {
-                // app_livre_get
-                if ('/books' === $pathinfo) {
-                    $ret = array (  '_controller' => 'AppBundle\\Controller\\LivreController::getAction',  '_route' => 'app_livre_get',);
-                    if (!in_array($canonicalMethod, array('GET'))) {
-                        $allow = array_merge($allow, array('GET'));
-                        goto not_app_livre_get;
-                    }
-
-                    return $ret;
+        if (0 === strpos($pathinfo, '/livre')) {
+            // app_livre_get
+            if ('/livre' === $pathinfo) {
+                $ret = array (  '_controller' => 'AppBundle\\Controller\\LivreController::getAction',  '_route' => 'app_livre_get',);
+                if (!in_array($canonicalMethod, array('GET'))) {
+                    $allow = array_merge($allow, array('GET'));
+                    goto not_app_livre_get;
                 }
-                not_app_livre_get:
 
-                // app_livre_addlivre
-                if ('/books' === $pathinfo) {
-                    $ret = array (  '_controller' => 'AppBundle\\Controller\\LivreController::addLivre',  '_route' => 'app_livre_addlivre',);
-                    if (!in_array($requestMethod, array('POST'))) {
-                        $allow = array_merge($allow, array('POST'));
-                        goto not_app_livre_addlivre;
-                    }
-
-                    return $ret;
-                }
-                not_app_livre_addlivre:
-
-                // app_livre_updatelivre
-                if (preg_match('#^/books/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
-                    $ret = $this->mergeDefaults(array_replace($matches, array('_route' => 'app_livre_updatelivre')), array (  '_controller' => 'AppBundle\\Controller\\LivreController::updateLivre',));
-                    if (!in_array($requestMethod, array('PUT'))) {
-                        $allow = array_merge($allow, array('PUT'));
-                        goto not_app_livre_updatelivre;
-                    }
-
-                    return $ret;
-                }
-                not_app_livre_updatelivre:
-
-                // app_livre_search
-                if (preg_match('#^/books/(?P<titre>[^/]++)$#sD', $pathinfo, $matches)) {
-                    $ret = $this->mergeDefaults(array_replace($matches, array('_route' => 'app_livre_search')), array (  '_controller' => 'AppBundle\\Controller\\LivreController::searchAction',));
-                    if (!in_array($canonicalMethod, array('GET'))) {
-                        $allow = array_merge($allow, array('GET'));
-                        goto not_app_livre_search;
-                    }
-
-                    return $ret;
-                }
-                not_app_livre_search:
-
+                return $ret;
             }
+            not_app_livre_get:
+
+            // app_livre_addlivre
+            if ('/livre' === $pathinfo) {
+                $ret = array (  '_controller' => 'AppBundle\\Controller\\LivreController::addLivre',  '_route' => 'app_livre_addlivre',);
+                if (!in_array($requestMethod, array('POST'))) {
+                    $allow = array_merge($allow, array('POST'));
+                    goto not_app_livre_addlivre;
+                }
+
+                return $ret;
+            }
+            not_app_livre_addlivre:
+
+            // app_livre_updatelivre
+            if (preg_match('#^/livre/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+                $ret = $this->mergeDefaults(array_replace($matches, array('_route' => 'app_livre_updatelivre')), array (  '_controller' => 'AppBundle\\Controller\\LivreController::updateLivre',));
+                if (!in_array($requestMethod, array('PUT'))) {
+                    $allow = array_merge($allow, array('PUT'));
+                    goto not_app_livre_updatelivre;
+                }
+
+                return $ret;
+            }
+            not_app_livre_updatelivre:
+
+            // app_livre_search
+            if (preg_match('#^/livre/(?P<titre>[^/]++)$#sD', $pathinfo, $matches)) {
+                $ret = $this->mergeDefaults(array_replace($matches, array('_route' => 'app_livre_search')), array (  '_controller' => 'AppBundle\\Controller\\LivreController::searchAction',));
+                if (!in_array($canonicalMethod, array('GET'))) {
+                    $allow = array_merge($allow, array('GET'));
+                    goto not_app_livre_search;
+                }
+
+                return $ret;
+            }
+            not_app_livre_search:
 
             // app_livre_detail
-            if (preg_match('#^/book/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+            if (preg_match('#^/livre/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
                 $ret = $this->mergeDefaults(array_replace($matches, array('_route' => 'app_livre_detail')), array (  '_controller' => 'AppBundle\\Controller\\LivreController::detailAction',));
                 if (!in_array($canonicalMethod, array('GET'))) {
                     $allow = array_merge($allow, array('GET'));
@@ -237,17 +234,17 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             }
             not_app_livre_detail:
 
-            // app_livre_deletebook
-            if (0 === strpos($pathinfo, '/books') && preg_match('#^/books/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
-                $ret = $this->mergeDefaults(array_replace($matches, array('_route' => 'app_livre_deletebook')), array (  '_controller' => 'AppBundle\\Controller\\LivreController::deletebook',));
+            // app_livre_suprimmerlivre
+            if (preg_match('#^/livre/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+                $ret = $this->mergeDefaults(array_replace($matches, array('_route' => 'app_livre_suprimmerlivre')), array (  '_controller' => 'AppBundle\\Controller\\LivreController::suprimmerlivre',));
                 if (!in_array($requestMethod, array('DELETE'))) {
                     $allow = array_merge($allow, array('DELETE'));
-                    goto not_app_livre_deletebook;
+                    goto not_app_livre_suprimmerlivre;
                 }
 
                 return $ret;
             }
-            not_app_livre_deletebook:
+            not_app_livre_suprimmerlivre:
 
         }
 

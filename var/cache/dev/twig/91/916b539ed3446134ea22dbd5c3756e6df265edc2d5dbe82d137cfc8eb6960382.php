@@ -168,6 +168,6 @@ class __TwigTemplate_95a22d5e3e8aabc462c25ada970356b6b18e53423efec499d7f9fe88ef8
         {% block javascripts %}{% endblock %}
     </body>
 </html>
-", "base.html.twig", "/home/maysa/Documents/symfony-rest-server-master/app/Resources/views/base.html.twig");
+", "base.html.twig", "/home/fatma/Bureau/symfony-rest-server-master/app/Resources/views/base.html.twig");
     }
 }

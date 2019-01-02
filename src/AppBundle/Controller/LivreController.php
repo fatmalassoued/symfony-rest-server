@@ -12,20 +12,20 @@ use FOS\RestBundle\View\View;
 class LivreController extends FOSRestController
 {
     /**
-     * @Rest\Get("/books")
+     * @Rest\Get("/livre")
      */
     public function getAction()
     {
         $result = $this->getDoctrine()->getRepository(Livre::class)->findAll();
         if ($result === null) {
-            return new View('there are no books', Response::HTTP_NOT_FOUND);
+            return new View('livre invalid ', Response::HTTP_NOT_FOUND);
         }
 
         return $result;
     }
 
     /**
-     * @Rest\Post("/books")
+     * @Rest\Post("/livre")
      */
     public function addLivre(Request $request)
     {
@@ -37,17 +37,17 @@ class LivreController extends FOSRestController
         $Livre = new Livre();
         $Livre->setTitre('Ajout via POST');
         $Livre->setDescriptif('descriptif');
-        $Livre->setISBN('mayssa karmeni');
+        $Livre->setISBN('fatma lassoued');
         $Livre->setDate(new \DateTime());
         $em = $this->getDoctrine()->getManager();
         $em->persist($Livre);
         $em->flush();
 
-        return new View('livre ajouté avec succé ', Response::HTTP_CREATED);
+        return new View('livre ajouter ', Response::HTTP_CREATED);
     }
 
     /**
-     * @Rest\Put("/books/{id}")
+     * @Rest\Put("/livre/{id}")
      */
     public function updateLivre(Request $request, $id)
     {
@@ -57,19 +57,19 @@ class LivreController extends FOSRestController
         if ($Livre == null) {
             return new View('NULL VALUES ARE NOT ALLOWED', Response::HTTP_NOT_CREATED);
         }
-        $Livre->setTitre('mayssa');
+        $Livre->setTitre('fatma');
         $Livre->setDescriptif('Put descriptif');
-        $Livre->setISBN('Put mayssa');
+        $Livre->setISBN('Put fatma');
         $Livre->setDate(new \DateTime());
         $em = $this->getDoctrine()->getManager();
         $em->persist($Livre);
         $em->flush();
 
-        return new View('livre update avec succeé', Response::HTTP_CREATED);
+        return new View('livre modifier ', Response::HTTP_CREATED);
     }
 
     /**
-     * @Rest\Get("/books/{titre}")
+     * @Rest\Get("/livre/{titre}")
      */
     public function searchAction($titre)
     {
@@ -77,14 +77,14 @@ class LivreController extends FOSRestController
         $repo = $em->getRepository(Livre::class);
         $result = $repo->findOneByTitre($titre);
         if ($result === null) {
-            return new View('there are no books with this title', Response::HTTP_NOT_FOUND);
+            return new View('livre non exsite ', Response::HTTP_NOT_FOUND);
         }
 
         return $result;
     }
 
     /**
-     * @Rest\Get("/book/{id}")
+     * @Rest\Get("/livre/{id}")
      */
     public function detailAction($id)
     {
@@ -92,16 +92,16 @@ class LivreController extends FOSRestController
         $repo = $em->getRepository(Livre::class);
         $result = $repo->find($id);
         if ($result === null) {
-            return new View('there are no books with this id', Response::HTTP_NOT_FOUND);
+            return new View('livre non existe ', Response::HTTP_NOT_FOUND);
         }
 
         return $result;
     }
 
     /**
-     * @Rest\Delete("/books/{id}")
+     * @Rest\Delete("/livre/{id}")
      */
-    public function deletebook(Request $request, $id)
+    public function suprimmerlivre(Request $request, $id)
     {
         $em = $this->getDoctrine()->getManager();
         $repo = $em->getRepository(Livre::class);
@@ -112,6 +112,6 @@ class LivreController extends FOSRestController
         $em->remove($Livre);
         $em->flush();
 
-        return new View('book deleted Successfully', Response::HTTP_CREATED);
+        return new View('livre supprimer ', Response::HTTP_CREATED);
     }
 }

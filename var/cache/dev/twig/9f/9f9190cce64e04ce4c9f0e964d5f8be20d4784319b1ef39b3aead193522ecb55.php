@@ -1669,6 +1669,6 @@ class __TwigTemplate_aeff5deb2c4ad44cd218a4dbffacdbffb52cb43062e617924bc94e7417e
         </tbody>
     </table>
 {% endmacro %}
-", "@Doctrine/Collector/db.html.twig", "/home/maysa/Documents/symfony-rest-server-master/vendor/doctrine/doctrine-bundle/Resources/views/Collector/db.html.twig");
+", "@Doctrine/Collector/db.html.twig", "/home/fatma/Bureau/symfony-rest-server-master/vendor/doctrine/doctrine-bundle/Resources/views/Collector/db.html.twig");
     }
 }

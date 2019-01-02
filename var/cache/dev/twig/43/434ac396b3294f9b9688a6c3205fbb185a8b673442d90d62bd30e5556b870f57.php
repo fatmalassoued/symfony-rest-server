@@ -87,6 +87,6 @@ class __TwigTemplate_63e38f6114a024879d58f3a57a80659aa78ac7eb992d31358f7ba92b177
         </div>
     </div>
 </div>
-", "@WebProfiler/Profiler/header.html.twig", "/home/maysa/Documents/symfony-rest-server-master/vendor/symfony/symfony/src/Symfony/Bundle/WebProfilerBundle/Resources/views/Profiler/header.html.twig");
+", "@WebProfiler/Profiler/header.html.twig", "/home/fatma/Bureau/symfony-rest-server-master/vendor/symfony/symfony/src/Symfony/Bundle/WebProfilerBundle/Resources/views/Profiler/header.html.twig");
     }
 }
